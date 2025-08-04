@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Amalia</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #618dec;
+      color: #444;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .container {
+      max-width: 800px;
+      background: #b6d7f0;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease-in-out;
+    }
+    .container:hover {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+    h1 {
+      color: #e07a94;
+      font-size: 32px;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+    h1:hover {
+      color: #ff7fa4;
+    }
+    h2 {
+      color: #ff97aa;
+      font-size: 24px;
+      margin: 30px 0 10px;
+      border-bottom: 2px solid #ffe3e8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-top: 10px;
+    }
+    .contact a {
+      color: #e07a94;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .contact a:hover {
+        color: #ff4f7b;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<!-- Love Cursor Script -->
+<script>
+  document.addEventListener('mousemove', function(e) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = (e.clientX - 5) + "px";
+    heart.style.top = (e.clientY - 5) + "px";
+    
+    // Buat warna random
+    const colors = ['#ff6b81', '#ffafcc', '#cdb4db', '#a0c4ff', '#b9fbc0', '#ffd6a5', '#fdffb6'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    heart.style.background = color;
+    heart.style.setProperty('--heart-color', color); // dipakai di before & after
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 1000);
+  });
+</script>
+
+<style>
+  .heart {
+    position: fixed;
+    width: 14px;
+    height: 14px;
+    background: var(--heart-color, pink);
+    transform: rotate(45deg);
+    animation: fly 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--heart-color, pink);
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -7px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: -7px;
+    top: 0;
+  }
+
+  @keyframes fly {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(45deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-60px) scale(1.5) rotate(45deg);
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <img src="WhatsApp_Image_2025-08-01_at_17.59.07_e2d05765-removebg-preview.png" alt="Foto Amalia" class="profile-img">
+    <h1>Hai, Aku Amalia! 💕</h1>
+    <p>Mahasiswi Sistem Informasi yang semangat belajar desain, ngoding, dan bikin hal-hal baru. Aku suka kerja tim, dan lagi belajar bikin website tentang diriku sendiri 🥰</p>
+
+    <h2>🎯 Hobi & Minat</h2>
+    <p>🎨 Desain grafis<br>💻 Ngoding & belajar web<br>📖 Baca novel<br>🎧 Dengerin musik galau</p>
+
+    <h2>🎓 Pendidikan</h2>
+    <p>SMK Negeri 1 Idi Rayeuk<br>Jurusan Teknik Komputer dan Jaringan<br>Universitas Malikussaleh<br>Program Studi Sistem Informasi<br>2024 - Sekarang</p>
+
+    <h2>📱 Kontak</h2>
+    <p class="contact">
+      Instagram: amaliasirait7<br>
+      Email: chabertycute@gmail.com
+    </p>
+  </div>
+</body>
+</html>
